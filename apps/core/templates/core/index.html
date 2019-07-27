@@ -4,7 +4,9 @@
     <div class="row">
     <div class="col-sm bg-success">
         <p class="text-center">One of three columns</p>
-        <p class="text-center">Rio de Janeiro</p>
+        <p class="text-center">
+        <a href="{% url 'departamento_list' %}">Gerenciar Departamentos</a>
+        </p>
     </div>
     <div class="col-sm bg-danger">
        <p class="text-center">Olá {{ usuario.funcionario.nome }}</p>
