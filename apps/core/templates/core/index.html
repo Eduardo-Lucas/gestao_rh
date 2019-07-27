@@ -6,9 +6,11 @@
         <p class="text-center">One of three columns</p>
         <p class="text-center">Rio de Janeiro</p>
     </div>
-    <div class="col-sm bg-info">
+    <div class="col-sm bg-danger">
        <p class="text-center">Olá {{ usuario.funcionario.nome }}</p>
-      <p class="text-center">Salvador</p>
+        <p class="text-center">
+        <a href="{% url 'funcionario_list' %}">Gerenciar Funcionários</a>
+        </p>
     </div>
     <div class="col-sm bg-warning">
       <p class="text-center">One of three columns</p>
