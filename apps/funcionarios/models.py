@@ -10,7 +10,7 @@ class Funcionario(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nome = models.CharField(max_length=100, help_text='Nome do funcionário')
     departamentos = models.ManyToManyField(Departamento)
-    empresa = models.ForeignKey(Empresa, models.PROTECT)
+    empresa = models.ForeignKey(Empresa, models.PROTECT, null=True, blank=True)
     
     def __str__(self):
         return self.nome
