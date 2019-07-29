@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 {% block main %}
     <h1>Atualiza Departamentos</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|bootstrap }}
         <button class="btn btn-outline-primary">Salvar</button>
     </form>
 {% endblock %}

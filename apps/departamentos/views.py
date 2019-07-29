@@ -28,6 +28,7 @@ class DepartamentoDelete(DeleteView):
     model = Departamento
     success_url = reverse_lazy('departamento_list')
 
+
 class DepartamentoCreate(CreateView):
     model = Departamento
     fields = ['nome']

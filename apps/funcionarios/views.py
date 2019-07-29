@@ -21,7 +21,7 @@ class FuncionarioList(ListView):
 
 class FuncionarioEdit(UpdateView):
     model = Funcionario
-    fields = '__all__'
+    fields = ['nome', 'departamentos']
 
 
 class FuncionarioCreate(CreateView):

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+{% block main %}
+
+    {{ form.errors }}
+
+    <!--multipart/form-data	= No characters are encoded.
+                              This value is required when you are using forms
+                              that have a file upload control
+    -->
+    <h1>Adicionar Documento</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <button class="btn btn-outline-primary">Adicionar</button>
+    </form>
+{% endblock %}
