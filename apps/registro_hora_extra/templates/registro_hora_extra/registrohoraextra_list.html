@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Banco de Horas Extras</h1>
+    <!--<a class="btn btn-info" href="#">Novo funcionário</a>-->
+    <table>
+        <thead>
+            <th>Nome</th>
+            <th>Ação</th>
+        </thead>
+        <tbody>
+        {% for registro_he in object_list %}
+            <tr>
+                <td>
+                    <a href="#">
+                        {{ registro_he }}
+                    </a>
+                </td>
+                <td>
+                    <a href="#">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
