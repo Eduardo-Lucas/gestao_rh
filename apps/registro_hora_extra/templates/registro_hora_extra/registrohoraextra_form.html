@@ -3,20 +3,23 @@
 
 {% block main %}
 
-    {% if object %}
-        <h1>Atualiza Departamento</h1>
-    {% else %}
-        <h1>Cria Novo Departamento</h1>
-    {% endif %}
+    {{ form.errors }}
 
-    <form method="post">
+    <h1>Hora Extra</h1>
+    <form method="post" >
         {% csrf_token %}
         {{ form|bootstrap }}
-
         {% if object %}
             <button class="btn btn-outline-primary">Atualizar</button>
         {% else %}
             <button class="btn btn-outline-primary">Gravar</button>
+        {% endif %}
+
+        {% if object %}
+            <a href="{% url 'hora_extra_delete' object.id %}"
+               class="btn btn-outline-danger">
+                            Delete
+            </a>
         {% endif %}
 
     </form>

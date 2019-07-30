@@ -2,17 +2,30 @@
 {% load bootstrap %}
 
 {% block main %}
-    <h1>{{object}} - {{object.id}}</h1>
-    <h1>Atualiza funcionário</h1>
+    {% if object %}
+        <h1>Atualiza funcionário</h1>
+    {% else %}
+        <h1>Cria Novo funcionário</h1>
+    {% endif %}
+
     <form method="post">
         {% csrf_token %}
         {{ form|bootstrap }}
-        <button class="btn btn-outline-primary">Salvar</button>
+
+        {% if object %}
+            <button class="btn btn-outline-primary">Atualizar</button>
+        {% else %}
+            <button class="btn btn-outline-primary">Gravar</button>
+        {% endif %}
+
     </form>
     <br>
+
+    {% if object %}
     <a href="{% url 'documento_create' object.id %}"
        class="btn btn-outline-success">Adicionar Documento
     </a>
+    {% endif %}
 
     {% if object.documento_set.all %}
 <hr>

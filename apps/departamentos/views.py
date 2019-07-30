@@ -18,7 +18,6 @@ class DepartamentoList(ListView):
         return Departamento.objects.filter(empresa=empresa_logada)
 
 
-
 class DepartamentoEdit(UpdateView):
     model = Departamento
     fields = ['nome']
